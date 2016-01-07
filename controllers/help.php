@@ -3,6 +3,6 @@
 class Help {
 
 	function __construct() {
-		echo 'We are in help';
+		echo 'We are in help<br />';
 	}
 }

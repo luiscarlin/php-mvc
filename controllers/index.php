@@ -8,7 +8,7 @@ class Index {
 	
 	function method($arg = false) {
 		
-		echo "you are in method";
+		echo "you are in method with optinal parameter " . $arg;
 		
 	}
 }

@@ -1,6 +1,12 @@
 <?php
-class Error {
-	function __construct($arg = false) {
-		echo "$arg<br />"; 
+class Error extends Controller {
+	
+	function __construct() {
+		parent::__construct();
+		//echo "$arg<br />"; 
+	}
+	
+	function index() { 
+		$this->view->render('error/index'); 
 	}
 }

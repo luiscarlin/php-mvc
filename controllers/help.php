@@ -1,8 +1,13 @@
 <?php
 
-class Help {
+class Help extends Controller {
 
 	function __construct() {
-		echo 'We are in help<br />';
+		parent::__construct();
+		//echo 'We are in help<br />';
+	}
+	
+	public function index() { 
+		$this->view->render('help/index');
 	}
 }

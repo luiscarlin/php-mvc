@@ -12,19 +12,10 @@ class Bootstrap {
 		
 		$controllerName = $url[0];
 		
-		if (empty($controllerName)) { 
-			require 'controllers/index.php'; 
-			$controller = new Index(); 
-			return false;
-		}
-		
 		$file = 'controllers/' . $controllerName . '.php';
 		
 		if (! file_exists($file)) {
-			
-			new Error("ERROR: This controller does not exist");
-		
-			# quit
+			$this->error();
 			return false;
 		}
 		
@@ -37,16 +28,27 @@ class Bootstrap {
 			$methodName = $url[1];
 			
 			if (! method_exists($controller, $methodName)) { 
-				new Error("ERROR: This method does not exist");
+				$this->error();
 				return false;
 			}
 
 			if (isset($url[2])) {
-				$controller -> {$methodName}($url[2]);
+				$controller->{$methodName}($url[2]);
 			}
 			else {
-				$controller -> {$methodName}();
+				$controller->{$methodName}();
 			}
 		}
+		else { 
+			// no method was set, so go to index() method for the controller by default
+			$controller->index();
+		}
+	}
+	
+	function error() { 
+		require 'controllers/error.php'; 
+		$controller = new Error(); 
+		$controller->index(); 
+		return false;
 	}
 }

@@ -1,14 +1,13 @@
 <?php
-require 'controllers/error.php';
 
 class Bootstrap {
+	
 	function __construct() {
-		
 		$url = isset($_GET['url']) ? $_GET['url'] : null;
 		$url = explode('/', rtrim($_GET['url'], '/'));
 		
 		// debug
-		//print_r($url);
+		print_r($url);
 		
 		$controllerName = $url[0];
 		
@@ -45,7 +44,7 @@ class Bootstrap {
 		}
 	}
 	
-	function error() { 
+	public function error() { 
 		require 'controllers/error.php'; 
 		$controller = new Error(); 
 		$controller->index(); 

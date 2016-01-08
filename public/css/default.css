@@ -2,17 +2,17 @@ body {
 	background: silver;
 }
 
-header {
+#header {
 	padding: 20px;
 	background: gold;
 }
 
-content {
+#content {
 	background: #fff;
 	padding: 20px;
 }
 
-footer {
+#footer {
 	background: green;
 	padding: 20px;
 }

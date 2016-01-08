@@ -3,11 +3,13 @@
 class Bootstrap {
 	
 	function __construct() {
-		$url = isset($_GET['url']) ? $_GET['url'] : null;
-		$url = explode('/', rtrim($_GET['url'], '/'));
+		// if no url, then go to index
+		$url = isset($_GET['url']) ? $_GET['url'] : "index";
+		
+		$url = explode('/', rtrim($url, '/'));
 		
 		// debug
-		print_r($url);
+		//print_r($url);
 		
 		$controllerName = $url[0];
 		

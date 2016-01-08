@@ -3,12 +3,20 @@ require 'controllers/error.php';
 
 class Bootstrap {
 	function __construct() {
+		
+		$url = isset($_GET['url']) ? $_GET['url'] : null;
 		$url = explode('/', rtrim($_GET['url'], '/'));
 		
 		// debug
 		//print_r($url);
 		
 		$controllerName = $url[0];
+		
+		if (empty($controllerName)) { 
+			require 'controllers/index.php'; 
+			$controller = new Index(); 
+			return false;
+		}
 		
 		$file = 'controllers/' . $controllerName . '.php';
 		

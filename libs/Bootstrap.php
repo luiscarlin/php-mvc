@@ -23,6 +23,7 @@ class Bootstrap {
 		require $file;
 		
 		$controller = new $controllerName;
+		$controller->loadModel($controllerName);
 		
 		if (isset($url[1])) {
 			

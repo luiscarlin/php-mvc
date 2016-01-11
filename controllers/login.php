@@ -8,4 +8,8 @@ class Login extends Controller {
 	function index() { 
 		$this->view->render('login/index'); 
 	}
+	
+	function run() { 
+		$this->model->run();
+	}
 }

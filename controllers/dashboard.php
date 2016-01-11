@@ -14,7 +14,7 @@ class Dashboard extends Controller {
 			Session::destroy();
 			
 			// redirect 
-			header('location: ../login'); 
+			header('location: login'); 
 			exit;
 		}
 	}

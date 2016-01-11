@@ -22,4 +22,10 @@ class Dashboard extends Controller {
 	function index() { 
 		$this->view->render('dashboard/index'); 
 	}
+	
+	function logout() { 
+		Session::destroy();
+		header('location: ../login'); 
+		exit;
+	}
 }

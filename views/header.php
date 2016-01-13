@@ -10,7 +10,6 @@
 <?php Session::init(); ?>
 
 <div id="header">
-	header
 	<br />
 	<a href="<?php echo URL; ?>index">Index</a>
 	<a href="<?php echo URL; ?>help">Help</a>
